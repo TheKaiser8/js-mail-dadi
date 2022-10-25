@@ -16,14 +16,28 @@ console.log(mails);
 const yourMail = prompt("Inserisci la tua mail");
 console.log(yourMail);
 
-for (let i = 0; i < mails.length; i++) {
-    if ( yourMail === mails[i] ) {
-        console.log("Accesso consentito");
-        alert("Sei autorizzato ad accedere");
-        break;
-    } else {
-        console.log("Accesso negato");
-        alert("NON sei autorizzato ad accedere. Si prega di inserire una mail autorizzata.");
-        location.reload();
-    }
+let index = mails.indexOf(yourMail);
+if ( index >= 0 ) {
+    console.log("Accesso consentito");
+    alert("Sei autorizzato ad accedere");
+} else {
+    console.log("Accesso negato");
+    alert("NON sei autorizzato ad accedere. Si prega di inserire una mail autorizzata.");
 }
+
+// PROVA senza utilizzo indexOf:
+// let index = -1;
+
+// for (let i = 0; i < mails.length; i++) {
+//     const element = mails[i];
+//     if ( element ===  yourMail ) {
+//         index = i;
+//         console.log("Accesso consentito");
+//         alert("Sei autorizzato ad accedere");
+//         break;
+//     } else {
+//         console.log("Accesso negato");
+//         alert("NON sei autorizzato ad accedere. Si prega di inserire una mail autorizzata.");
+//     }
+// }
+
